@@ -1,6 +1,7 @@
 package org.example;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -25,5 +26,13 @@ public class Main {
         System.out.println("Default format: " + now);
         System.out.println("24-hour format: " + now.format(dtf3));
         System.out.println("12-hour format: " + now.format(dtf4));
+
+        // Exercise 3 - LocalDateTime and DateTimeFormatter
+        LocalDateTime event = LocalDateTime.of(2025, 11, 27, 19, 0, 0);
+
+        DateTimeFormatter dtf5 = DateTimeFormatter.ofPattern("MMM dd, yyyy 'at' hh:mm a");
+
+        System.out.println("Default format: " + event);
+        System.out.println("Custom format: " + event.format(dtf5));
     }
 }
