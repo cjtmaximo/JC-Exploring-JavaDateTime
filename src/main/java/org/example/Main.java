@@ -48,5 +48,17 @@ public class Main {
 
         System.out.println("The original start date is still: " + startDate);
         System.out.println("The new end date is: " + endDate);
+
+        // Exercise 5 - Adding and Subtracting Time (`plus` and `minus`)
+        LocalDateTime baseTime = LocalDateTime.of(2025, 10, 15, 10, 30, 0);
+
+        LocalDateTime futureTime = baseTime.plusYears(1).plusMonths(2).plusHours(5);
+        LocalDateTime pastTime = baseTime.minusWeeks(3).minusDays(3);
+
+        DateTimeFormatter dtf6 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
+        System.out.println("Base time:   " + baseTime.format(dtf6));
+        System.out.println("Future time: " + futureTime.format(dtf6));
+        System.out.println("Past time:   " + pastTime.format(dtf6));
     }
 }
