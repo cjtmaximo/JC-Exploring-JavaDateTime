@@ -34,5 +34,19 @@ public class Main {
 
         System.out.println("Default format: " + event);
         System.out.println("Custom format: " + event.format(dtf5));
+
+        // Exercise 4 - The Immutability of Date-Time Objects
+        LocalDate startDate = LocalDate.of(2025, 9, 1);
+
+        // Attempt to add 10 days, but don't assign the result
+        startDate.plusDays(10);
+
+        System.out.println("Start date after trying to modify it: " + startDate); // Doesn't work because Date-Time objects are immutable
+
+        // Now correctly add 10 days by assigning the result to a new variable
+        LocalDate endDate = startDate.plusDays(10);
+
+        System.out.println("The original start date is still: " + startDate);
+        System.out.println("The new end date is: " + endDate);
     }
 }
